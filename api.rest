@@ -1,8 +1,8 @@
-@apiUrl = http://localhost:53032
+@apiUrl = https://localhost:44340
 @identityServiceUrl = https://localhost:44345
 #http://localhost:50895
-@accessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiNDg0ZjJhMzhjMjg0Y2ZmOTFiZWQwNDMxNTJiOGU2YyIsInVuaXF1ZV9uYW1lIjoiYjQ4NGYyYTM4YzI4NGNmZjkxYmVkMDQzMTUyYjhlNmMiLCJqdGkiOiI2MmVhOGNhMi05OTFkLTRjMzAtOGZiZS1kMzFjYmJiZGRkMjIiLCJpYXQiOiIxNTY3NTMzMzUxMTkwIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiYWRtaW4iLCJuYmYiOjE1Njc1MzMzNTEsImV4cCI6MTU2NzUzNTE1MSwiaXNzIjoiZHNob3AtaWRlbnRpdHktc2VydmljZSJ9.3uAz1fNc1fPuVOiDB7XKQaq2mNOJNhHmJbDgt_PQvKA"
-@refreshToken = "AQAAAAEAACcQAAAAEEcdLLmI2jwOX8iHncZ6ixBQHVKEvxBWMC2HNkDYMILpiDaT7m5MGyeXhEWsGj4w"
+@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiNDg0ZjJhMzhjMjg0Y2ZmOTFiZWQwNDMxNTJiOGU2YyIsInVuaXF1ZV9uYW1lIjoiYjQ4NGYyYTM4YzI4NGNmZjkxYmVkMDQzMTUyYjhlNmMiLCJqdGkiOiIzMGQ0YjNmYi1lMWM4LTQ4NzUtYTM3NS00ZjUyNDdkZDNhNTgiLCJpYXQiOiIxNTY3NTM5NTM5Mzg1IiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiYWRtaW4iLCJuYmYiOjE1Njc1Mzk1MzksImV4cCI6MTU2NzU0MTMzOSwiaXNzIjoiZHNob3AtaWRlbnRpdHktc2VydmljZSJ9.cYhp-lQVsOKaVOJ8QGCBeh2BFbrf5VPg4X5hcPtNATY
+@refreshToken = AQAAAAEAACcQAAAAEEcdLLmI2jwOX8iHncZ6ixBQHVKEvxBWMC2HNkDYMILpiDaT7m5MGyeXhEWsGj4w
 @operationId = xxxxxxxxxxxxxxxxxx
 @productId = xxxxxxxxxxxxxxxxxx
 @customerId = xxxxxxxxxxxxxxxxxx
@@ -46,7 +46,7 @@ content-type: application/json
 
 ### Get your identity
 GET {{identityServiceUrl}}/me
-authorization: Bearer {{accessToken}}
+Authorization:Bearer {{accessToken}}
 
 ### Change password
 PUT {{identityServiceUrl}}/me/password
