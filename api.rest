@@ -1,7 +1,8 @@
 @apiUrl = http://localhost:53032
-@identityServiceUrl = http://localhost:50895
-@accessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiNDg0ZjJhMzhjMjg0Y2ZmOTFiZWQwNDMxNTJiOGU2YyIsInVuaXF1ZV9uYW1lIjoiYjQ4NGYyYTM4YzI4NGNmZjkxYmVkMDQzMTUyYjhlNmMiLCJqdGkiOiJjMDEzMjY2My0yYTc5LTQ1YmEtYmE1MS01OGY3ZjdjMWRhNmMiLCJpYXQiOiIxNTY3NDQ5MjI1NDM2IiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiYWRtaW4iLCJuYmYiOjE1Njc0NDkyMjUsImV4cCI6MTU2NzQ1MTAyNSwiaXNzIjoiZHNob3AtaWRlbnRpdHktc2VydmljZSJ9.D6EYdAANs7Qu0VDpG6aquuDUukWPyawvRRqLhjm7m30"
-@refreshToken = xxxxxxxxxxxxxxxxxx
+@identityServiceUrl = https://localhost:44345
+#http://localhost:50895
+@accessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiNDg0ZjJhMzhjMjg0Y2ZmOTFiZWQwNDMxNTJiOGU2YyIsInVuaXF1ZV9uYW1lIjoiYjQ4NGYyYTM4YzI4NGNmZjkxYmVkMDQzMTUyYjhlNmMiLCJqdGkiOiI2MmVhOGNhMi05OTFkLTRjMzAtOGZiZS1kMzFjYmJiZGRkMjIiLCJpYXQiOiIxNTY3NTMzMzUxMTkwIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiYWRtaW4iLCJuYmYiOjE1Njc1MzMzNTEsImV4cCI6MTU2NzUzNTE1MSwiaXNzIjoiZHNob3AtaWRlbnRpdHktc2VydmljZSJ9.3uAz1fNc1fPuVOiDB7XKQaq2mNOJNhHmJbDgt_PQvKA"
+@refreshToken = "AQAAAAEAACcQAAAAEEcdLLmI2jwOX8iHncZ6ixBQHVKEvxBWMC2HNkDYMILpiDaT7m5MGyeXhEWsGj4w"
 @operationId = xxxxxxxxxxxxxxxxxx
 @productId = xxxxxxxxxxxxxxxxxx
 @customerId = xxxxxxxxxxxxxxxxxx
@@ -38,12 +39,47 @@ content-type: application/json
 	"password": {{pwd}}
 }
 
-### Get me Information
+
+# Once authenticated, copy the obtained accessToken and update the @accessToken parameter above.
+
+# ================= IDENTITY SERVICE ======================= #
+
+### Get your identity
 GET {{identityServiceUrl}}/me
 authorization: Bearer {{accessToken}}
 
+### Change password
+PUT {{identityServiceUrl}}/me/password
+authorization: Bearer {{accessToken}}
+content-type: application/json
 
-# Once authenticated, copy the obtained accessToken and update the @accessToken parameter above.
+{
+	"currentPassword": "secret",
+	"newPassword": "very_secret"
+}
+
+### Generate a new access token by updating @refreshToken parameter above
+POST  {{identityServiceUrl}}/access-tokens/{{refreshToken}}/refresh
+content-type: application/json
+
+{
+}
+
+### Revoke a current access token
+POST {{identityServiceUrl}}/access-tokens/revoke
+authorization: Bearer {{accessToken}}
+content-type: application/json
+
+{
+}
+
+### Revoke a current refresh token
+POST {{identityServiceUrl}}/refresh-tokens/{{refreshToken}}/revoke
+authorization: Bearer {{accessToken}}
+content-type: application/json
+
+{
+}
 
 # ================= API GATEWAY ======================= #
 

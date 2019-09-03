@@ -12,6 +12,7 @@ using MicroS_Common.Dispatchers;
 using MicroS_Common.Jeager;
 using MicroS_Common.Mvc;
 using MicroS_Common.RabbitMq;
+using MicroS_Common.Redis;
 using MicroS_Common.RestEase;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -45,15 +46,16 @@ namespace weerp.api
             services.AddJwt();
             services.AddJaeger();
             //services.AddOpenTracing();
-            //services.AddRedis();
+            services.AddRedis();
             services.AddAuthorization(x => x.AddPolicy("admin", p => p.RequireRole("admin")));
             services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy", cors =>
-                        cors.AllowAnyOrigin()
+                        cors
+                            //.AllowAnyOrigin()
                             .AllowAnyMethod()
                             .AllowAnyHeader()
-                            //.AllowCredentials()
+                            .AllowCredentials()
                             .WithExposedHeaders(Headers));
             });
             services.RegisterServiceForwarder<IOperationsService>("operations-service");
