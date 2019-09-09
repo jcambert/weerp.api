@@ -29,8 +29,8 @@ namespace weerp.api
                 {
                     webBuilder
                     .UseStartup<Startup>()
-                    //.UseLogging()
-                    .UseAppMetrics();
+                    .UseLogging()
+                    //.UseAppMetrics();
 
                     ;
                 });

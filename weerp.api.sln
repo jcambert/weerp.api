@@ -10,6 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{548520CD-098C-4B44-B61F-F03EFDB392DF}"
 	ProjectSection(SolutionItems) = preProject
 		api.rest = api.rest
+		api_port.txt = api_port.txt
 	EndProjectSection
 EndProject
 Global

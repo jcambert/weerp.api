@@ -1,0 +1,3 @@
+api:8000 18000
+service.identity:5000 15000
+service.product:5001 15001

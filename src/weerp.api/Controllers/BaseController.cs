@@ -94,7 +94,7 @@ namespace weerp.api.Controllers
             }
 
             return CorrelationContext.Create<T>(Guid.NewGuid(), UserId, resourceId ?? Guid.Empty,
-               HttpContext.TraceIdentifier, HttpContext.Connection.Id, _tracer.ActiveSpan.Context.ToString(),
+               HttpContext.TraceIdentifier, HttpContext.Connection.Id, _tracer?.ActiveSpan?.Context?.ToString() ??"",
                Request.Path.ToString(), Culture, resource);
         }
 

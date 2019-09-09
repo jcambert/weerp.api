@@ -52,10 +52,10 @@ namespace weerp.api
             {
                 options.AddPolicy("CorsPolicy", cors =>
                         cors
-                            //.AllowAnyOrigin()
+                            .AllowAnyOrigin()
                             .AllowAnyMethod()
                             .AllowAnyHeader()
-                            .AllowCredentials()
+                            //.AllowCredentials()
                             .WithExposedHeaders(Headers));
             });
             services.RegisterServiceForwarder<IOperationsService>("operations-service");
