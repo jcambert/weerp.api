@@ -1,3 +1,6 @@
 api:8000 18000
 service.identity:5000 15000
-service.product:5001 15001
+weerp.product:5001 15001
+service.operations:5002 15002
+//weerp.discounts:5003 15003
+service.signalr:5007 

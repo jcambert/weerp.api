@@ -10,6 +10,7 @@ using MicroS_Common.Authentication;
 using MicroS_Common.Consul;
 using MicroS_Common.Dispatchers;
 using MicroS_Common.Jeager;
+using MicroS_Common.Messages;
 using MicroS_Common.Mvc;
 using MicroS_Common.RabbitMq;
 using MicroS_Common.Redis;
@@ -91,7 +92,9 @@ namespace weerp.api
 #pragma warning disable MVC1005
             app.UseMvc();
 #pragma warning restore MVC1005
-            app.UseRabbitMq();
+            app.UseRabbitMq().SubscribeEvent<IRejectedEvent>(onError:(ee,e)=>{
+                return null;
+            });
 
             var consulServiceId = app.UseConsul();
             applicationLifetime.ApplicationStopped.Register(() =>
