@@ -16,11 +16,11 @@ namespace weerp.api.Controllers
     [JwtAuth]
     public abstract class BaseController : ControllerBase
     {
-        private static readonly string AcceptLanguageHeader = "accept-language";
-        private static readonly string OperationHeader = "X-Operation";
-        private static readonly string ResourceHeader = "X-Resource";
-        private static readonly string DefaultCulture = "fr-fr";
-        private static readonly string PageLink = "page";
+        private const string AcceptLanguageHeader = "accept-language";
+        private const string OperationHeader = "X-Operation";
+        private const string ResourceHeader = "X-Resource";
+        private const string DefaultCulture = "fr-fr";
+        private const string PageLink = "page";
         private readonly IBusPublisher _busPublisher;
         private readonly ITracer _tracer;
 

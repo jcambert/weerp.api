@@ -1,7 +1,7 @@
 @apiUrl = http://localhost:8000
 @identityServiceUrl = http://localhost:5000
 #http://localhost:50895
-@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwZjNmZDk5OWRmMDM0MDE1YWI4NDljMzYzOTExOGMwYiIsInVuaXF1ZV9uYW1lIjoiMGYzZmQ5OTlkZjAzNDAxNWFiODQ5YzM2MzkxMThjMGIiLCJqdGkiOiJiZjRhYzQ5Yy00YTJiLTQ0MWMtYTgzNy03MDdmM2ZhMzczZDEiLCJpYXQiOiIxNTY4NTM5OTgwNzM1IiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiYWRtaW4iLCJuYmYiOjE1Njg1Mzk5ODAsImV4cCI6MTU2ODU0MTc4MCwiaXNzIjoiZHNob3AtaWRlbnRpdHktc2VydmljZSJ9.7re52gt4wWwx3BBVP-mLqIy7jk5pBDjuIF30dehNjO4
+@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3N2U0ODg0NzRmMTg0Njc0YTcyNjMzOWU5MTAyOGI0OSIsInVuaXF1ZV9uYW1lIjoiNzdlNDg4NDc0ZjE4NDY3NGE3MjYzMzllOTEwMjhiNDkiLCJqdGkiOiJjNjNiNThhYy1lNzFkLTQ3YzUtOGRmMy1iYWU2M2E5NmQyMzQiLCJpYXQiOiIxNTY5NTEyNjE5NTQ2IiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiYWRtaW4iLCJuYmYiOjE1Njk1MTI2MTksImV4cCI6MTU2OTUxNDQxOSwiaXNzIjoiZHNob3AtaWRlbnRpdHktc2VydmljZSJ9.Ly2Pe4ySzZGLUsSZDx4R5tFYAkYMFynCMn4riuArtd0
 @refreshToken = AQAAAAEAACcQAAAAEK4Yjyue2kOUh65GjX3B4ws0oE8aLe51qGFDaa3dSx0nm4yzedhBbIZDuZ4c0Sq0A
 @operationId = xxxxxxxxxxxxxxxxxx
 @productId = xxxxxxxxxxxxxxxxxx
@@ -9,7 +9,7 @@
 @orderId = xxxxxxxxxxxxxxxxxx
 
 @user = "jc.admin@free.fr"
-@pwd = "very_secret"
+@pwd = "secret"
 @role = "admin"
 
 # ================= OPERATION DETAILS ======================= #
@@ -90,7 +90,7 @@ authorization: Bearer {{accessToken}}
 content-type: application/json
 
 {
-	"name": "My product",
+	"name": "   My product 7  ",
 	"description": "My product description",
 	"vendor": "My company",
 	"price": 2000,
@@ -103,10 +103,11 @@ authorization: Bearer {{accessToken}}
 content-type: application/json
 
 {
-	"name": "My product rejected",
+	"name":"",
 	"description": "My product rejected description",
 	"price": 2000,
-	"quantity": 10
+	"quantity": 10,
+	"vendor":"toto"
 }
 @productId=e85e8205-bb0d-4835-bb05-0a8533ef6faa
 ### Get products list
@@ -263,4 +264,17 @@ authorization: Bearer {{accessToken}}
 content-type: application/json
 
 {
+}
+
+# ================= SETTINGS SERVICE ======================= #
+### CREATE A SETTINGS
+POST {{apiUrl}}/settings
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+ 	"numero":1,
+	"desc":"Parametre 1",
+	"type":"A",
+	"stringValue":"ATF Industrie"
 }

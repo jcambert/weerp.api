@@ -60,9 +60,10 @@ namespace weerp.api
                             .WithExposedHeaders(Headers));
             });
             services.RegisterServiceForwarder<IOperationsService>("operations-service");
-            services.RegisterServiceForwarder<ICustomersService>("customers-service");
-            services.RegisterServiceForwarder<IOrdersService>("orders-service");
+            //services.RegisterServiceForwarder<ICustomersService>("customers-service");
+            //services.RegisterServiceForwarder<IOrdersService>("orders-service");
             services.RegisterServiceForwarder<IProductsService>("products-service");
+            services.RegisterServiceForwarder<ISettingsService>("settings-service");
         }
 
         public void ConfigureContainer(ContainerBuilder builder)
