@@ -9,6 +9,7 @@ using weerp.api.Framework;
 using weerp.api.Messages.Commands.Products;
 using weerp.api.Queries;
 using weerp.api.Services;
+using weerp.domain.Products.Messages.Commands;
 
 namespace weerp.api.Controllers
 {

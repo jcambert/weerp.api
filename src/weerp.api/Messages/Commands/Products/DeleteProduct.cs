@@ -4,7 +4,7 @@ using System;
 
 namespace weerp.api.Messages.Commands.Products
 {
-    [MessageNamespace("products")]
+   /* [MessageNamespace("products")]
     public class DeleteProduct : ICommand
     {
         public Guid Id { get; }
@@ -14,5 +14,5 @@ namespace weerp.api.Messages.Commands.Products
         {
             Id = id;
         }
-    }
+    }*/
 }

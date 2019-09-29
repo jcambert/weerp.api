@@ -1,7 +1,7 @@
 @apiUrl = http://localhost:8000
 @identityServiceUrl = http://localhost:5000
 #http://localhost:50895
-@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3N2U0ODg0NzRmMTg0Njc0YTcyNjMzOWU5MTAyOGI0OSIsInVuaXF1ZV9uYW1lIjoiNzdlNDg4NDc0ZjE4NDY3NGE3MjYzMzllOTEwMjhiNDkiLCJqdGkiOiJjNjNiNThhYy1lNzFkLTQ3YzUtOGRmMy1iYWU2M2E5NmQyMzQiLCJpYXQiOiIxNTY5NTEyNjE5NTQ2IiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiYWRtaW4iLCJuYmYiOjE1Njk1MTI2MTksImV4cCI6MTU2OTUxNDQxOSwiaXNzIjoiZHNob3AtaWRlbnRpdHktc2VydmljZSJ9.Ly2Pe4ySzZGLUsSZDx4R5tFYAkYMFynCMn4riuArtd0
+@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwZjNmZDk5OWRmMDM0MDE1YWI4NDljMzYzOTExOGMwYiIsInVuaXF1ZV9uYW1lIjoiMGYzZmQ5OTlkZjAzNDAxNWFiODQ5YzM2MzkxMThjMGIiLCJqdGkiOiIyYzAwMTUyYy1kYTQwLTQyMWYtYTk4My0xNzU0N2UwMmVmODAiLCJpYXQiOiIxNTY5NjU4NDc2ODcwIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiYWRtaW4iLCJuYmYiOjE1Njk2NTg0NzYsImV4cCI6MTU2OTgzODQ3NiwiaXNzIjoiZHNob3AtaWRlbnRpdHktc2VydmljZSJ9.6C0PKUYcuD2u4bONGLOUB92nI28PMntNYn7i6nYZIQY
 @refreshToken = AQAAAAEAACcQAAAAEK4Yjyue2kOUh65GjX3B4ws0oE8aLe51qGFDaa3dSx0nm4yzedhBbIZDuZ4c0Sq0A
 @operationId = xxxxxxxxxxxxxxxxxx
 @productId = xxxxxxxxxxxxxxxxxx
@@ -9,7 +9,7 @@
 @orderId = xxxxxxxxxxxxxxxxxx
 
 @user = "jc.admin@free.fr"
-@pwd = "secret"
+@pwd = "very_secret"
 @role = "admin"
 
 # ================= OPERATION DETAILS ======================= #
@@ -90,7 +90,7 @@ authorization: Bearer {{accessToken}}
 content-type: application/json
 
 {
-	"name": "   My product 7  ",
+	"name": "   My product 40 ",
 	"description": "My product description",
 	"vendor": "My company",
 	"price": 2000,

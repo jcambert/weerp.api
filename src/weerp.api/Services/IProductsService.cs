@@ -2,8 +2,8 @@
 using RestEase;
 using System;
 using System.Threading.Tasks;
-using weerp.api.Models.Products;
 using weerp.api.Queries;
+using weerp.domain.Products.Dto;
 
 namespace weerp.api.Services
 {
@@ -12,10 +12,10 @@ namespace weerp.api.Services
     {
         [AllowAnyStatusCode]
         [Get("products/{id}")]
-        Task<Product> GetAsync([Path] Guid id);
+        Task<ProductDto> GetAsync([Path] Guid id);
 
         [AllowAnyStatusCode]
         [Get("products")]
-        Task<PagedResult<Product>> BrowseAsync([Query] BrowseProducts query);
+        Task<PagedResult<ProductDto>> BrowseAsync([Query] BrowseProducts query);
     }
 }

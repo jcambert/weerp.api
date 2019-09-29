@@ -2,6 +2,7 @@
 using MicroS_Common.RabbitMq;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using OpenTracing;
 using System;
 using System.Threading.Tasks;
@@ -9,6 +10,7 @@ using weerp.api.Framework;
 using weerp.api.Messages.Commands.Products;
 using weerp.api.Queries;
 using weerp.api.Services;
+using weerp.domain.Products.Messages.Commands;
 
 namespace weerp.api.Controllers
 {
@@ -16,11 +18,13 @@ namespace weerp.api.Controllers
     public class ProductsController : BaseController
     {
         private readonly IProductsService _productsService;
+        private readonly ILogger<CreateProduct> _logger;
 
         public ProductsController(IBusPublisher busPublisher, ITracer tracer,
-            IProductsService productsService) : base(busPublisher, tracer)
+            IProductsService productsService,ILogger<CreateProduct>logger) : base(busPublisher, tracer)
         {
             _productsService = productsService;
+            _logger = logger;
         }
 
         [HttpGet]
@@ -35,13 +39,11 @@ namespace weerp.api.Controllers
 
         [HttpPost]
         public async Task<IActionResult> Post(CreateProduct command)
-            => await SendAsync(command.BindId(c => c.Id),
-                resourceId: command.Id, resource: "products");
+            => await SendAsync(command.BindId(c => c.Id,_logger),  resourceId: command.Id, resource: "products");
 
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(Guid id, UpdateProduct command)
-            => await SendAsync(command.Bind(c => c.Id, id),
-                resourceId: command.Id, resource: "products");
+            => await SendAsync(command.Bind(c => c.Id, id),resourceId: command.Id, resource: "products");
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(Guid id)

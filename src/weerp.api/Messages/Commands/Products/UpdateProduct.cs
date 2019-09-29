@@ -4,7 +4,7 @@ using System;
 
 namespace weerp.api.Messages.Commands.Products
 {
-    [MessageNamespace("products")]
+   /* [MessageNamespace("products")]
     public class UpdateProduct : ICommand
     {
         public Guid Id { get; }
@@ -26,5 +26,5 @@ namespace weerp.api.Messages.Commands.Products
             Price = price;
             Quantity = quantity;
         }
-    }
+    }*/
 }
