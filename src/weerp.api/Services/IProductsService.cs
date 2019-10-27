@@ -4,6 +4,7 @@ using System;
 using System.Threading.Tasks;
 using weerp.api.Queries;
 using weerp.domain.Products.Dto;
+using weerp.domain.Products.Queries;
 
 namespace weerp.api.Services
 {

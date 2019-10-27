@@ -7,10 +7,9 @@ using OpenTracing;
 using System;
 using System.Threading.Tasks;
 using weerp.api.Framework;
-using weerp.api.Messages.Commands.Products;
-using weerp.api.Queries;
 using weerp.api.Services;
 using weerp.domain.Products.Messages.Commands;
+using weerp.domain.Products.Queries;
 
 namespace weerp.api.Controllers
 {

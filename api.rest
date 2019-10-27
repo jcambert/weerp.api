@@ -1,7 +1,7 @@
 @apiUrl = http://localhost:8000
 @identityServiceUrl = http://localhost:5000
 #http://localhost:50895
-@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwZjNmZDk5OWRmMDM0MDE1YWI4NDljMzYzOTExOGMwYiIsInVuaXF1ZV9uYW1lIjoiMGYzZmQ5OTlkZjAzNDAxNWFiODQ5YzM2MzkxMThjMGIiLCJqdGkiOiIyYzAwMTUyYy1kYTQwLTQyMWYtYTk4My0xNzU0N2UwMmVmODAiLCJpYXQiOiIxNTY5NjU4NDc2ODcwIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiYWRtaW4iLCJuYmYiOjE1Njk2NTg0NzYsImV4cCI6MTU2OTgzODQ3NiwiaXNzIjoiZHNob3AtaWRlbnRpdHktc2VydmljZSJ9.6C0PKUYcuD2u4bONGLOUB92nI28PMntNYn7i6nYZIQY
+@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwZjNmZDk5OWRmMDM0MDE1YWI4NDljMzYzOTExOGMwYiIsInVuaXF1ZV9uYW1lIjoiMGYzZmQ5OTlkZjAzNDAxNWFiODQ5YzM2MzkxMThjMGIiLCJqdGkiOiI4NDJhNzlhOS05ODAxLTQ3YWItYTEzZS1hYjUyYjA0YzA2NmEiLCJpYXQiOiIxNTcyMTA0MzI4NjgwIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiYWRtaW4iLCJuYmYiOjE1NzIxMDQzMjgsImV4cCI6MTU3MjI4NDMyOCwiaXNzIjoiZHNob3AtaWRlbnRpdHktc2VydmljZSJ9.-Dl5rF11o71JpGsQSlk3VFqDXFzpXtDvJeSa8FRWdLE
 @refreshToken = AQAAAAEAACcQAAAAEK4Yjyue2kOUh65GjX3B4ws0oE8aLe51qGFDaa3dSx0nm4yzedhBbIZDuZ4c0Sq0A
 @operationId = xxxxxxxxxxxxxxxxxx
 @productId = xxxxxxxxxxxxxxxxxx
@@ -90,7 +90,7 @@ authorization: Bearer {{accessToken}}
 content-type: application/json
 
 {
-	"name": "   My product 40 ",
+	"name": "   My product 41 ",
 	"description": "My product description",
 	"vendor": "My company",
 	"price": 2000,
@@ -274,7 +274,10 @@ Content-Type: application/json
 
 {
  	"numero":1,
-	"desc":"Parametre 1",
+	"description":"Parametre 1",
 	"type":"A",
 	"stringValue":"ATF Industrie"
 }
+
+### Get settings list
+GET {{apiUrl}}/settings
