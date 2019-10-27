@@ -2,8 +2,8 @@
 using RestEase;
 using System;
 using System.Threading.Tasks;
-using weerp.api.Models.Settings;
-using weerp.api.Queries;
+using weerp.domain.Settings.Dto;
+using weerp.domain.Settings.Queries;
 
 namespace weerp.api.Services
 {
@@ -12,10 +12,10 @@ namespace weerp.api.Services
     {
         [AllowAnyStatusCode]
         [Get("settings/{id}")]
-        Task<Setting> GetAsync([Path] Guid id);
+        Task<SettingDto> GetAsync([Path] Guid id);
 
         [AllowAnyStatusCode]
         [Get("settings")]
-        Task<PagedResult<Setting>> BrowseAsync([Query] BrowseSettings query);
+        Task<PagedResult<SettingDto>> BrowseAsync([Query] BrowseSettings query);
     }
 }

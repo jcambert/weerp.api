@@ -15,6 +15,7 @@ using MicroS_Common.Mvc;
 using MicroS_Common.RabbitMq;
 using MicroS_Common.Redis;
 using MicroS_Common.RestEase;
+using MicroS_Common.Swagger;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -42,7 +43,7 @@ namespace weerp.api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCustomMvc();
-            //services.AddSwaggerDocs();
+            services.AddSwaggerDocs();
             services.AddConsul();
             services.AddJwt();
             services.AddJaeger();
@@ -85,7 +86,7 @@ namespace weerp.api
 
             app.UseCors("CorsPolicy");
             app.UseAllForwardedHeaders();
-            //app.UseSwaggerDocs();
+            app.UseSwaggerDocs();
             app.UseErrorHandler();
             app.UseAuthentication();
             app.UseAccessTokenValidator();
