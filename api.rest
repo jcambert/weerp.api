@@ -1,7 +1,7 @@
 @apiUrl = http://localhost:8000
 @identityServiceUrl = http://localhost:5000
 #http://localhost:50895
-@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3N2U0ODg0NzRmMTg0Njc0YTcyNjMzOWU5MTAyOGI0OSIsInVuaXF1ZV9uYW1lIjoiNzdlNDg4NDc0ZjE4NDY3NGE3MjYzMzllOTEwMjhiNDkiLCJqdGkiOiJmNDA4ZmM2Yi1kMzEyLTRiYzgtYTQ4MS1mYzY4ZDVkMTBlNTkiLCJpYXQiOiIxNTcyMzU1NzcxMzE1IiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiYWRtaW4iLCJuYmYiOjE1NzIzNTU3NzEsImV4cCI6MTU3MjM1NzU3MSwiaXNzIjoiZHNob3AtaWRlbnRpdHktc2VydmljZSJ9.VnTKAEsEzmAtpFGW-qQ6wlV_MyoJrtrPr42r52TFLag
+@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwZjNmZDk5OWRmMDM0MDE1YWI4NDljMzYzOTExOGMwYiIsInVuaXF1ZV9uYW1lIjoiMGYzZmQ5OTlkZjAzNDAxNWFiODQ5YzM2MzkxMThjMGIiLCJqdGkiOiI4NDJhNzlhOS05ODAxLTQ3YWItYTEzZS1hYjUyYjA0YzA2NmEiLCJpYXQiOiIxNTcyMTA0MzI4NjgwIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiYWRtaW4iLCJuYmYiOjE1NzIxMDQzMjgsImV4cCI6MTU3MjI4NDMyOCwiaXNzIjoiZHNob3AtaWRlbnRpdHktc2VydmljZSJ9.-Dl5rF11o71JpGsQSlk3VFqDXFzpXtDvJeSa8FRWdLE
 @refreshToken = AQAAAAEAACcQAAAAEK4Yjyue2kOUh65GjX3B4ws0oE8aLe51qGFDaa3dSx0nm4yzedhBbIZDuZ4c0Sq0A
 @operationId = xxxxxxxxxxxxxxxxxx
 @productId = xxxxxxxxxxxxxxxxxx
@@ -9,7 +9,7 @@
 @orderId = xxxxxxxxxxxxxxxxxx
 
 @user = "jc.admin@free.fr"
-@pwd = "secret"
+@pwd = "very_secret"
 @role = "admin"
 
 # ================= OPERATION DETAILS ======================= #
@@ -267,22 +267,13 @@ content-type: application/json
 }
 
 # ================= SETTINGS SERVICE ======================= #
-### CREATE DEFAULTS SETTINGS
-POST {{apiUrl}}/settings/init
-Authorization: Bearer {{accessToken}}
-Content-Type: application/json
-
-{
-	"description":"Initial"
-}
-
 ### CREATE A SETTINGS
 POST {{apiUrl}}/settings
 Authorization: Bearer {{accessToken}}
 Content-Type: application/json
 
 {
- 	"numero":2,
+ 	"numero":1,
 	"description":"Parametre 1",
 	"type":"A",
 	"stringValue":"ATF Industrie"

@@ -35,19 +35,10 @@ namespace weerp.api.Controllers
         public async Task<IActionResult> Get(Guid id)
             => Single(await _settingsService.GetAsync(id));
 
-        [HttpPost("init")]
-        public async Task<IActionResult> Init(CreateDefaultsSettings command)
-        {
-            command.BindId(c => c.Id);
-            return await SendAsync(command,resourceId: command.Id,resource: "settings");
-        }
-
         [HttpPost]
         public async Task<IActionResult> Post(CreateSetting command)
             => await SendAsync(command.BindId(c => c.Id),
                 resourceId: command.Id, resource: "settings");
-
-
 
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(Guid id, UpdateProduct command)
