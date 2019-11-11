@@ -1,10 +1,10 @@
-﻿using MicroS_Common.Authentication;
+using MicroS_Common.Authentication;
 
 namespace weerp.api.Framework
 {
-    public class AdminAuth : JwtAuthAttribute
+    public class AdminAuthAttribute : JwtAuthAttribute
     {
-        public AdminAuth() : base("admin")
+        public AdminAuthAttribute() : base("admin")
         {
         }
     }
